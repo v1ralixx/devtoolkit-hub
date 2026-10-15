@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DevToolkit Hub — набор полезных утилит для разработчиков среднего уровня." />
+    <title>DevToolkit Hub</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">D</div>
+          <div>
+            <div class="brand-name">DevToolkit Hub</div>
+            <div class="brand-sub">инструменты для разработчиков</div>
+          </div>
+        </div>
+        <button class="ghost-button" id="copy-all-button" type="button">Копировать все</button>
+      </header>
+
+      <main class="layout">
+        <section class="hero panel">
+          <div class="hero-text">
+            <div class="eyebrow">Для среднего уровня</div>
+            <h1>Набор утилит, которые экономят время на работе и в пет-проектах.</h1>
+            <p>
+              Форматируй JSON, конвертируй Base64, проверяй URL, создавай пароли,
+              генерируй UUID и быстро переводишь цвета между форматами.
+            </p>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>7+</strong>
+              <span>инструментов</span>
+            </div>
+            <div class="metric">
+              <strong>0</strong>
+              <span>установок</span>
+            </div>
+            <div class="metric">
+              <strong>∞</strong>
+              <span>идеек</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <article class="panel tool-card" data-tool="json">
+            <div class="tool-header">
+              <span class="tool-tag">JSON</span>
+              <h2>Форматировать / минифицировать</h2>
+            </div>
+            <textarea id="json-input" placeholder="Вставьте JSON...">{"name":"devtoolkit","version":1,"features":["json","url","color"]}</textarea>
+            <div class="actions">
+              <button class="primary-button" data-action="json-format" type="button">Форматировать</button>
+              <button class="secondary-button" data-action="json-minify" type="button">Минифицировать</button>
+              <button class="icon-button" data-copy-target="json-input" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+
+          <article class="panel tool-card" data-tool="base64">
+            <div class="tool-header">
+              <span class="tool-tag">BASE64</span>
+              <h2>Encode / Decode</h2>
+            </div>
+            <textarea id="base64-input" placeholder="Введите текст или Base64...">Hello DevToolkit</textarea>
+            <div class="actions">
+              <button class="primary-button" data-action="base64-encode" type="button">Encode</button>
+              <button class="secondary-button" data-action="base64-decode" type="button">Decode</button>
+              <button class="icon-button" data-copy-target="base64-input" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+
+          <article class="panel tool-card" data-tool="url">
+            <div class="tool-header">
+              <span class="tool-tag">URL</span>
+              <h2>Параметры запроса</h2>
+            </div>
+            <textarea id="url-input" placeholder="https://example.com/?utm_source=site&token=abc">https://example.com/search?q=react&lang=ru&page=2</textarea>
+            <div class="actions">
+              <button class="primary-button" data-action="url-parse" type="button">Разобрать</button>
+              <button class="secondary-button" data-action="url-build" type="button">Собрать</button>
+              <button class="icon-button" data-copy-target="url-input" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+
+          <article class="panel tool-card" data-tool="password">
+            <div class="tool-header">
+              <span class="tool-tag">SECURITY</span>
+              <h2>Генератор паролей</h2>
+            </div>
+            <div class="inline-row">
+              <label for="password-length">Длина</label>
+              <input id="password-length" type="number" min="8" max="64" value="18" />
+            </div>
+            <textarea id="password-output" readonly>Vg9#Kp2!uQm7@X4s</textarea>
+            <div class="actions">
+              <button class="primary-button" data-action="password-generate" type="button">Сгенерировать</button>
+              <button class="icon-button" data-copy-target="password-output" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+
+          <article class="panel tool-card" data-tool="uuid">
+            <div class="tool-header">
+              <span class="tool-tag">UUID</span>
+              <h2>Генератор UUID v4</h2>
+            </div>
+            <textarea id="uuid-output" readonly>6f26619d-4c95-4a36-847d-578b0d22d5c7</textarea>
+            <div class="actions">
+              <button class="primary-button" data-action="uuid-generate" type="button">Создать</button>
+              <button class="icon-button" data-copy-target="uuid-output" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+
+          <article class="panel tool-card" data-tool="color">
+            <div class="tool-header">
+              <span class="tool-tag">COLOR</span>
+              <h2>HEX / RGB / HSL</h2>
+            </div>
+            <div class="color-inputs">
+              <input id="color-input" type="text" placeholder="#6ee7b7" value="#6ee7b7" />
+              <div id="color-preview" class="color-preview" aria-label="Preview"></div>
+            </div>
+            <textarea id="color-output" readonly>rgb(110, 231, 183)
+ hsl(157, 76%, 66%)</textarea>
+            <div class="actions">
+              <button class="primary-button" data-action="color-convert" type="button">Конвертировать</button>
+              <button class="icon-button" data-copy-target="color-output" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+
+          <article class="panel tool-card wide-card" data-tool="markdown">
+            <div class="tool-header">
+              <span class="tool-tag">MD</span>
+              <h2>Markdown → Preview</h2>
+            </div>
+            <div class="split-panel">
+              <textarea id="markdown-input" placeholder="# Заголовок
+
+- список
+- элементов
+
+**жирный** текст"># Привет, DevToolkit
+
+**Быстрый пример**
+
+- HTML
+- CSS
+- JavaScript</textarea>
+              <div id="markdown-output" class="markdown-output"></div>
+            </div>
+            <div class="actions">
+              <button class="primary-button" data-action="markdown-preview" type="button">Предпросмотр</button>
+              <button class="icon-button" data-copy-target="markdown-output" type="button" title="Копировать">Copy</button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
